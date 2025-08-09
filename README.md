@@ -26,7 +26,7 @@ nextjs-tarot-site/
 │  ├─ Footer.tsx
 │  └─ Hero.tsx
 ├─ lib/
-│  └─ siteConfig.ts
+│  └─ siteConfig.tsf
 ├─ public/
 │  └─ images/
 │     ├─ tarot-placeholder.jpg
