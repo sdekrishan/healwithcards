@@ -49,6 +49,7 @@ const TarotReading = () => {
 
   return (
     <PerPageComponent
+      sectionId="tarot-reading"
       services={services}
       slides={slides}
       name={"Tarot-Reading"}

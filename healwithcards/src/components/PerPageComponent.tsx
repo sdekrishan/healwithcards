@@ -4,14 +4,16 @@ import type { Service, Slide } from "@/utils/types";
 import { Flex, Heading } from "@chakra-ui/react";
 
 type Props = {
+  sectionId: string;
   name: string;
   slides: Slide[];
   services: Service[];
 };
 
-const PerPageComponent = ({ slides, services, name }: Props) => {
+const PerPageComponent = ({ sectionId, slides, services, name }: Props) => {
   return (
     <Flex
+      id={sectionId}
       direction="column"
       rowGap="10"
       w="100vw"

@@ -1,23 +1,30 @@
-import { Box, Flex, Image } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Box, Button, Flex, Image } from "@chakra-ui/react";
 import logo from "../assets/logo.png";
 
 const Navbar = () => {
-  const services = [
-    "tarot-reading",
-    "rituals",
-    "spells",
-    "remedies",
-    "switch-words",
+  const sections = [
+    { label: "Tarot Reading", id: "tarot-reading" },
+    { label: "Rituals", id: "rituals" },
+    { label: "Spells", id: "spells" },
+    { label: "Remedies", id: "remedies" },
+    { label: "Switch Words", id: "switch-words" },
   ];
+
+  const handleScroll = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <Flex
       justifyContent="space-between"
       alignItems={"center"}
       padding="2"
-      borderBottom={'1px solid lightgray'}
+      borderBottom={"1px solid lightgray"}
     >
-      <Box height="50px" width="50px"  ml="10">
+      <Box height="50px" width="50px" ml="10">
         <Image src={logo} borderRadius="50%" border="1px solid gray" />
       </Box>
       <Box
@@ -29,8 +36,19 @@ const Navbar = () => {
         px={10}
         gap={10}
       >
-        {services.map((service) => {
-          return <Link key={service} style={{color: 'black', fontWeight: '200'}} to={`/${service}`}>{service}</Link>;
+        {sections.map((section) => {
+          return (
+            <Button
+              onClick={() => handleScroll(section.id)}
+              as="a"
+              variant="ghost"
+              border="none"
+              color="black"
+              bg="white"
+            >
+              {section.label}
+            </Button>
+          );
         })}
       </Box>
     </Flex>
