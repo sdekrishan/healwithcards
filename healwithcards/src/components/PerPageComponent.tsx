@@ -2,6 +2,7 @@ import ServiceCard from "@/components/ServiceCard";
 import TextCarousel from "@/components/TextCarousel";
 import type { Service, Slide } from "@/utils/types";
 import { Flex, Heading } from "@chakra-ui/react";
+import BackToTopButton from "./BackToTop";
 
 type Props = {
   sectionId: string;
@@ -18,7 +19,7 @@ const PerPageComponent = ({ sectionId, slides, services, name }: Props) => {
       rowGap="10"
       w="100vw"
       minH="calc(100vh - 80px)"
-      border="1px solid black"
+      borderBottom="1px solid gray"
       p="20"
     >
       <Heading
@@ -35,6 +36,7 @@ const PerPageComponent = ({ sectionId, slides, services, name }: Props) => {
           <ServiceCard key={service.heading} service={service} />
         ))}
       </Flex>
+      <BackToTopButton/>
     </Flex>
   );
 };
