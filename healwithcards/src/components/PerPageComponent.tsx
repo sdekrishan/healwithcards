@@ -23,7 +23,7 @@ const PerPageComponent = ({ sectionId, slides, services, name }: Props) => {
       p="20"
     >
       <Heading
-        marginBlock="10"
+        marginBottom="10"
         fontFamily="cursive"
         fontSize="4xl"
         fontWeight="700"
